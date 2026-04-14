@@ -1,0 +1,742 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Olshop - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/sc/css/style.css" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiary: "#006947",
+              "on-surface-variant": "#424754",
+              "on-primary-fixed": "#001a42",
+              "tertiary-fixed": "#6ffbbe",
+              "on-tertiary-fixed-variant": "#005236",
+              "tertiary-fixed-dim": "#4edea3",
+              "surface-container-highest": "#e0e3e5",
+              "secondary-fixed-dim": "#b8c8e0",
+              "surface-tint": "#005ac2",
+              "surface-container": "#eceef0",
+              "on-error-container": "#93000a",
+              outline: "#727785",
+              "outline-variant": "#c2c6d6",
+              "on-tertiary-container": "#f5fff6",
+              "inverse-on-surface": "#eff1f3",
+              "primary-fixed": "#d8e2ff",
+              "on-background": "#191c1e",
+              "tertiary-container": "#00855b",
+              surface: "#f7f9fb",
+              "secondary-container": "#d1e1fa",
+              background: "#f7f9fb",
+              "on-tertiary-fixed": "#002113",
+              "inverse-surface": "#2d3133",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004395",
+              "on-secondary-fixed": "#0c1c2f",
+              "on-secondary-container": "#556479",
+              error: "#ba1a1a",
+              "primary-container": "#2170e4",
+              "on-surface": "#191c1e",
+              "secondary-fixed": "#d4e4fd",
+              "inverse-primary": "#adc6ff",
+              primary: "#0058be",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#fefcff",
+              secondary: "#505f75",
+              "surface-dim": "#d8dadc",
+              "on-primary": "#ffffff",
+              "surface-variant": "#e0e3e5",
+              "surface-container-high": "#e6e8ea",
+              "surface-container-low": "#f2f4f6",
+              "surface-bright": "#f7f9fb",
+              "on-secondary-fixed-variant": "#39485c",
+              "error-container": "#ffdad6",
+              "primary-fixed-dim": "#adc6ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface text-on-surface flex min-h-screen">
+    <!-- NavigationDrawer (Shared Component) -->
+    <aside
+      class="hidden md:flex h-full w-72 fixed left-0 top-0 z-50 bg-[#1e2d40] flex-col py-8 space-y-2 backdrop-blur-md bg-opacity-95 shadow-2xl"
+    >
+      <div class="text-white font-black text-2xl px-6 mb-8 tracking-tighter">
+        Olshop
+      </div>
+      <div class="px-6 mb-10 flex items-center space-x-3">
+        <div
+          class="w-12 h-12 rounded-full overflow-hidden bg-secondary-container"
+        >
+          <img
+            class="w-full h-full object-cover"
+            data-alt="professional portrait of an operations manager in a clean modern office setting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq5z3cDgnyqA42eInyfDDrxsmrvtEVT0Oyyr_Ad31AsXkZT5YDmmkdPvqc0Y3G9uLd0KkcNGrntDOpXqwbpgHb6BUCIpA2hWKkxthhSypQqQ1YpYpAjnLtK8wAvNMdoSkH7PVoiMUqMVDniDFbK1JLNP2uNWvdaW4E1VCIzXt-qhzEQxehFVt-UjoZFOZ8zRYiWCOJuSVBZDe7bR1pW9_rhQoxFwXvPA-zIl0Oqj4Wz1uemht2uG2v4Uwdmq4-iBlXbIg1-XsAsho"
+          />
+        </div>
+        <div>
+          <p class="text-white font-semibold text-sm">Aril Kumar Sidik</p>
+          <p class="text-slate-400 text-xs">Operations Manager</p>
+        </div>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="bg-[#0058be] text-white rounded-lg mx-2 px-4 py-3 font-semibold flex items-center space-x-3 active:scale-95 duration-150"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          class="text-slate-400 hover:text-white mx-2 px-4 py-3 flex items-center space-x-3 transition-colors hover:bg-white/10 rounded-lg"
+          href="products.html"
+        >
+          <span class="material-symbols-outlined">inventory_2</span>
+          <span>Products</span>
+        </a>
+        <a
+          class="text-slate-400 hover:text-white mx-2 px-4 py-3 flex items-center space-x-3 transition-colors hover:bg-white/10 rounded-lg"
+          href="orders.html"
+        >
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span>Orders</span>
+        </a>
+        <a
+          class="text-slate-400 hover:text-white mx-2 px-4 py-3 flex items-center space-x-3 transition-colors hover:bg-white/10 rounded-lg"
+          href="customers.html"
+        >
+          <span class="material-symbols-outlined">group</span>
+          <span>Customers</span>
+        </a>
+        <a
+          class="text-slate-400 hover:text-white mx-2 px-4 py-3 flex items-center space-x-3 transition-colors hover:bg-white/10 rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Reports</span>
+        </a>
+        <a
+          class="text-slate-400 hover:text-white mx-2 px-4 py-3 flex items-center space-x-3 transition-colors hover:bg-white/10 rounded-lg"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main
+      class="flex-1 md:ml-72 min-h-screen flex flex-col relative pb-24 md:pb-8"
+    >
+      <!-- TopAppBar (Shared Component) -->
+      <header
+        class="w-full top-0 sticky z-40 bg-[#f7f9fb] flex justify-between items-center px-6 py-4 transition-all duration-200 ease-in-out"
+      >
+        <div class="flex items-center space-x-4">
+          <button class="md:hidden text-[#0058be]">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1
+            class="font-inter text-xl font-bold tracking-tighter text-[#1e2d40]"
+          >
+            Olshop Director
+          </h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="text-[#0058be] p-2 hover:bg-slate-100 rounded-full transition-colors"
+          >
+            <span class="material-symbols-outlined">notifications</span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary-container md:hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="close up headshot of operations director Alex Sterling"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP2pFtfG2cA4DrY6ufD6m9G_vMRVNEzNuAbFS2gkFY5Mghpham2PsK_uN5vBBoDEOLvRCIE6HcSuNDRNwixOjoby4jg9g2b2Hoak2jEaZnKGUZarkbTC4ls_HPH16emUZFtM3KKGD-xbyb4FHq6RZYyBervQ79Mbf_DTpJj2Vg6qS-3yGtpOqBDJR4xdt6LTTQ-4HHxUAl0YyFrAr-Es4geiZB-YK30_n_3aL4rOhTVnbywyMJLDGmp_L249QFEpI79pOtGqEHE5U"
+            />
+          </div>
+        </div>
+      </header>
+      <!-- Content Body -->
+      <div class="px-6 py-6 space-y-8 max-w-7xl mx-auto w-full">
+        <!-- Summary Bento Grid -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Total Revenue -->
+          <div
+            class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between space-y-4"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-xs font-bold tracking-widest text-secondary uppercase"
+                >Total Revenue</span
+              >
+              <span class="material-symbols-outlined text-primary text-xl"
+                >payments</span
+              >
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-extrabold tracking-tight text-on-surface"
+              >
+                $128,430
+              </h2>
+              <div class="flex items-center mt-1 space-x-1">
+                <span
+                  class="material-symbols-outlined text-tertiary text-sm"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >trending_up</span
+                >
+                <span class="text-[10px] font-bold text-tertiary">+12.5%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Orders Today -->
+          <div
+            class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between space-y-4"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-xs font-bold tracking-widest text-secondary uppercase"
+                >Orders Today</span
+              >
+              <span class="material-symbols-outlined text-primary text-xl"
+                >shopping_bag</span
+              >
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-extrabold tracking-tight text-on-surface"
+              >
+                432
+              </h2>
+              <div class="flex items-center mt-1 space-x-1">
+                <span
+                  class="material-symbols-outlined text-tertiary text-sm"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >trending_up</span
+                >
+                <span class="text-[10px] font-bold text-tertiary">+4.2%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Active Products -->
+          <div
+            class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between space-y-4"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-xs font-bold tracking-widest text-secondary uppercase"
+                >Active Products</span
+              >
+              <span class="material-symbols-outlined text-primary text-xl"
+                >inventory_2</span
+              >
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-extrabold tracking-tight text-on-surface"
+              >
+                1,204
+              </h2>
+              <div class="flex items-center mt-1 space-x-1">
+                <span
+                  class="material-symbols-outlined text-error text-sm"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >trending_down</span
+                >
+                <span class="text-[10px] font-bold text-error">-0.8%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Customers -->
+          <div
+            class="bg-surface-container-lowest p-5 rounded-xl flex flex-col justify-between space-y-4"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-xs font-bold tracking-widest text-secondary uppercase"
+                >Customers</span
+              >
+              <span class="material-symbols-outlined text-primary text-xl"
+                >person</span
+              >
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-extrabold tracking-tight text-on-surface"
+              >
+                8.4k
+              </h2>
+              <div class="flex items-center mt-1 space-x-1">
+                <span
+                  class="material-symbols-outlined text-tertiary text-sm"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >trending_up</span
+                >
+                <span class="text-[10px] font-bold text-tertiary">+18%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Sales Trend & Categories -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Sales Chart Mockup -->
+          <div
+            class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl space-y-6"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg tracking-tight">
+                Monthly Sales Trend
+              </h3>
+              <div
+                class="text-xs font-bold text-primary flex items-center space-x-1"
+              >
+                <span>Last 30 Days</span>
+                <span class="material-symbols-outlined text-sm"
+                  >expand_more</span
+                >
+              </div>
+            </div>
+            <div
+              class="h-48 w-full flex items-end justify-between space-x-2 px-2"
+            >
+              <!-- Simplified bar chart representation for line trend -->
+              <div
+                class="w-full bg-primary-container opacity-20 h-[30%] rounded-t-sm"
+              ></div>
+              <div
+                class="w-full bg-primary-container opacity-30 h-[45%] rounded-t-sm"
+              ></div>
+              <div
+                class="w-full bg-primary-container opacity-40 h-[35%] rounded-t-sm"
+              ></div>
+              <div
+                class="w-full bg-primary-container opacity-50 h-[60%] rounded-t-sm"
+              ></div>
+              <div
+                class="w-full bg-primary-container opacity-60 h-[50%] rounded-t-sm"
+              ></div>
+              <div
+                class="w-full bg-primary-container opacity-80 h-[85%] rounded-t-sm"
+              ></div>
+              <div class="w-full bg-primary h-full rounded-t-sm"></div>
+              <div
+                class="w-full bg-primary-container opacity-70 h-[65%] rounded-t-sm"
+              ></div>
+            </div>
+            <div
+              class="flex justify-between text-[10px] font-bold text-secondary uppercase tracking-widest"
+            >
+              <span>Week 1</span>
+              <span>Week 2</span>
+              <span>Week 3</span>
+              <span>Week 4</span>
+            </div>
+          </div>
+          <!-- Category Distribution -->
+          <div
+            class="bg-surface-container-lowest p-6 rounded-xl flex flex-col justify-between"
+          >
+            <h3 class="font-bold text-lg tracking-tight mb-4">
+              Stock by Category
+            </h3>
+            <div class="relative w-40 h-40 mx-auto">
+              <svg
+                class="w-full h-full transform -rotate-90"
+                viewbox="0 0 36 36"
+              >
+                <path
+                  class="text-surface-container"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-dasharray="100, 100"
+                  stroke-width="3"
+                ></path>
+                <path
+                  class="text-primary"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-dasharray="45, 100"
+                  stroke-width="4"
+                ></path>
+                <path
+                  class="text-tertiary"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-dasharray="30, 100"
+                  stroke-dashoffset="-45"
+                  stroke-width="4"
+                ></path>
+                <path
+                  class="text-secondary"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-dasharray="25, 100"
+                  stroke-dashoffset="-75"
+                  stroke-width="4"
+                ></path>
+              </svg>
+              <div
+                class="absolute inset-0 flex items-center justify-center flex-col"
+              >
+                <span class="text-2xl font-black">1.2k</span>
+                <span class="text-[10px] font-bold text-secondary uppercase"
+                  >SKUs</span
+                >
+              </div>
+            </div>
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                  <span class="text-xs font-medium">Electronics</span>
+                </div>
+                <span class="text-xs font-bold">45%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 rounded-full bg-tertiary"></div>
+                  <span class="text-xs font-medium">Furniture</span>
+                </div>
+                <span class="text-xs font-bold">30%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                  <span class="text-xs font-medium">Apparel</span>
+                </div>
+                <span class="text-xs font-bold">25%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Recent Orders & Top Products -->
+        <section class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+          <!-- Recent Orders Table -->
+          <div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+            <div class="px-6 py-5 flex justify-between items-center bg-white">
+              <h3 class="font-bold text-lg tracking-tight">Recent Orders</h3>
+              <button class="text-xs font-bold text-primary hover:underline">
+                View All
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead
+                  class="bg-surface-container-low text-[10px] font-black uppercase tracking-widest text-secondary"
+                >
+                  <tr>
+                    <th class="px-6 py-3">Order ID</th>
+                    <th class="px-6 py-3">Date</th>
+                    <th class="px-6 py-3">Amount</th>
+                    <th class="px-6 py-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-container">
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group"
+                  >
+                    <td class="px-6 py-4 font-bold text-sm text-primary">
+                      #ORD-9021
+                    </td>
+                    <td class="px-6 py-4 text-sm text-on-surface-variant">
+                      Oct 24, 2023
+                    </td>
+                    <td class="px-6 py-4 text-sm font-bold">$1,240.00</td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-black rounded-full uppercase"
+                        >Completed</span
+                      >
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group"
+                  >
+                    <td class="px-6 py-4 font-bold text-sm text-primary">
+                      #ORD-9020
+                    </td>
+                    <td class="px-6 py-4 text-sm text-on-surface-variant">
+                      Oct 24, 2023
+                    </td>
+                    <td class="px-6 py-4 text-sm font-bold">$450.00</td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-black rounded-full uppercase"
+                        >Processing</span
+                      >
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group"
+                  >
+                    <td class="px-6 py-4 font-bold text-sm text-primary">
+                      #ORD-9019
+                    </td>
+                    <td class="px-6 py-4 text-sm text-on-surface-variant">
+                      Oct 23, 2023
+                    </td>
+                    <td class="px-6 py-4 text-sm font-bold">$89.00</td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-black rounded-full uppercase"
+                        >Pending</span
+                      >
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface-container-low transition-colors group"
+                  >
+                    <td class="px-6 py-4 font-bold text-sm text-primary">
+                      #ORD-9018
+                    </td>
+                    <td class="px-6 py-4 text-sm text-on-surface-variant">
+                      Oct 23, 2023
+                    </td>
+                    <td class="px-6 py-4 text-sm font-bold">$2,100.00</td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="px-3 py-1 bg-error-container text-on-error-container text-[10px] font-black rounded-full uppercase"
+                        >Cancelled</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Top Products with Stock Indicators -->
+          <div class="bg-surface-container-lowest p-6 rounded-xl space-y-6">
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-lg tracking-tight">
+                Top Performance Products
+              </h3>
+              <span class="material-symbols-outlined text-secondary"
+                >more_vert</span
+              >
+            </div>
+            <div class="space-y-6">
+              <!-- Product 1 -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container-low overflow-hidden"
+                    >
+                      <img
+                        class="w-full h-full object-cover"
+                        data-alt="minimal high-end studio shot of professional noise cancelling headphones"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7jfSd1GVtJ6tkv0lHYs8tdogNC9DhWb764bwEliNEswV7HGlfM41qArqSf_mIbfJaM7bhqUEZMpQIhhTe8pzQKNSD9r7oKYvel0j2DfczyvAaEkKDL3FwPiwD-DiDJQu71Ix-8wDZ4EgdJghpFgMbzxLd_4_k2bLJvT2jb0BMgOAoK9uaqg-XJVBs2WjqxF73vftTeI6YamjoUNx4ORnS2z0MADfV7F8D2evB--k4Bs7YeeNgxbjT9rhV0wMWjyGVGGmqmI_MHk"
+                      />
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold">AudioTech Pro Headphones</p>
+                      <p
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest"
+                      >
+                        Electronics
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-black text-primary">85% Sold</span>
+                </div>
+                <!-- Bespoke Stock Indicator Component -->
+                <div class="flex space-x-1">
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                </div>
+              </div>
+              <!-- Product 2 -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container-low overflow-hidden"
+                    >
+                      <img
+                        class="w-full h-full object-cover"
+                        data-alt="clean minimalist smart watch with white band on grey background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIoRYrFTK4DVBDBQD5SW4H6nmfHtn3gwZtpwGPwnENqh11_F0r_8nyErEivGrVWxJp89lWOfi0U8TbhPEzi57l39kepg6XdFqJd9uj54XMm5GptWjuGYJ3jJA7tTePbSRjFeHWy2EjRUImHgw4SvxBdY5YvtqbgPSVq6xcWGhyYkNyG26b4PxQjlRI_tiyxT2OwbNcRMVmZtgIan96w2wM7_v9mDcDiNHa_yxU3oLvBBs8RhIgzf9EysH0voh6yZOLd5mhok1nzzo"
+                      />
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold">Nexus Smart Watch V2</p>
+                      <p
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest"
+                      >
+                        Electronics
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-black text-primary">62% Sold</span>
+                </div>
+                <div class="flex space-x-1">
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div class="h-1.5 flex-1 rounded-full bg-tertiary"></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                </div>
+              </div>
+              <!-- Product 3 -->
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-surface-container-low overflow-hidden"
+                    >
+                      <img
+                        class="w-full h-full object-cover"
+                        data-alt="vibrant red running shoe on clean white background professional commercial shot"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuChL1Hi9vfZjSH3Cw13DZ6CRrINnQxiEZVzbAKe5J-w1D9tuZCy1WZPRXi4Jz2vnA_DlWPzm-6Y5l8SVXZbixPZVvc9MPIivcmq0dxWKbyPbFjVewTwR-lM9Zk1IMLD0P-VNuZBdvWTp53FTNELGs_49o25H6Z939SrRYdZotjzdM9kMC4Efe6Cl_U6mboTUndVvUSB801yeZACB4KQ-flK1VHFSZpRCce4IJYvlonvNUQAZ_kBjyaAQGhBz2fqt-ZZtW5hT6A1-d8"
+                      />
+                    </div>
+                    <div>
+                      <p class="text-sm font-bold">Velocity Sprint Runners</p>
+                      <p
+                        class="text-[10px] font-bold text-secondary uppercase tracking-widest"
+                      >
+                        Apparel
+                      </p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-black text-error">12% Left</span>
+                </div>
+                <div class="flex space-x-1">
+                  <div class="h-1.5 flex-1 rounded-full bg-error"></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                  <div
+                    class="h-1.5 flex-1 rounded-full bg-secondary-container"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Floating Quick Actions -->
+      <div
+        class="fixed bottom-24 right-6 flex flex-col space-y-3 z-50 md:bottom-8"
+      >
+        <button
+          class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95"
+        >
+          <span
+            class="material-symbols-outlined text-2xl"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >add</span
+          >
+        </button>
+        <button
+          class="w-14 h-14 bg-white text-primary rounded-full shadow-lg flex items-center justify-center border border-primary-container transition-transform hover:scale-110 active:scale-95"
+        >
+          <span class="material-symbols-outlined text-2xl"
+            >shopping_cart_checkout</span
+          >
+        </button>
+      </div>
+      <!-- BottomNavBar (Shared Component) -->
+      <nav
+        class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-white/80 backdrop-blur-lg border-t border-[#c2c6d6]/20 shadow-[0_-4px_20px_rgba(25,28,30,0.04)] z-50"
+      >
+        <a
+          class="flex flex-col items-center justify-center text-[#0058be] scale-110 transition-transform duration-300"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >home</span
+          >
+          <span
+            class="font-inter text-[10px] uppercase tracking-widest mt-1 font-bold"
+            >Home</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0058be] transition-transform duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined">package_2</span>
+          <span class="font-inter text-[10px] uppercase tracking-widest mt-1"
+            >Stock</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0058be] transition-transform duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined">receipt_long</span>
+          <span class="font-inter text-[10px] uppercase tracking-widest mt-1"
+            >Orders</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center justify-center text-slate-400 hover:text-[#0058be] transition-transform duration-300"
+          href="#"
+        >
+          <span class="material-symbols-outlined">more_horiz</span>
+          <span class="font-inter text-[10px] uppercase tracking-widest mt-1"
+            >More</span
+          >
+        </a>
+      </nav>
+    </main>
+  </body>
+</html>
