@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Management - Inventory Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="sc/css/style.css">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#39485c",
+                        "on-surface-variant": "#424754",
+                        "surface": "#f7f9fb",
+                        "surface-tint": "#005ac2",
+                        "primary-fixed-dim": "#adc6ff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#00855b",
+                        "outline": "#727785",
+                        "tertiary": "#006947",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#d4e4fd",
+                        "inverse-primary": "#adc6ff",
+                        "error-container": "#ffdad6",
+                        "primary": "#0058be",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-container": "#556479",
+                        "on-tertiary-container": "#f5fff6",
+                        "outline-variant": "#c2c6d6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#d1e1fa",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eff1f3",
+                        "background": "#f7f9fb",
+                        "primary-container": "#2170e4",
+                        "on-secondary-fixed": "#0c1c2f",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary": "#505f75",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#001a42",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container": "#eceef0",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fefcff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed-dim": "#b8c8e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-[#1E2D40] flex justify-between items-center px-6 py-4 w-full sticky top-0 z-50 shadow-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0058be] dark:text-blue-400">menu</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#1E2D40] dark:text-white">Inventory Ledger</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 font-normal font-['Inter'] text-sm tracking-tight hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg" href="index.html">Home</a>
+<a class="text-slate-500 font-normal font-['Inter'] text-sm tracking-tight hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg" href="#">Stock</a>
+<a class="text-slate-500 font-normal font-['Inter'] text-sm tracking-tight hover:bg-[#f2f4f6] dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg" href="orders.html">Orders</a>
+<a class="text-[#0058be] font-semibold font-['Inter'] text-sm tracking-tight px-3 py-1 rounded-lg" href="customers.html">Customers</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional corporate headshot of a middle aged man with a confident smile in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYoHjUHl5RahgXkqnUqjgkpNahqLzLiX_lkKDbDRq1yYDOh_tJUoq-YfxTHV9T4ggr4TwuRqYuMs9uMLY5gXzZ1Jwj5kpZSUVf82iB5rRwfLpeKrQTZ0qKT0wyFxzt0Cieuom8PPYluaiQF4pNE0KJWzyLdwRHJzXLfx9IhqKFpIi9uP8AcbGwfRLrIZGpGj3Ry4FTyXjfG026j3v3CarsUd4hIyTJBirqTxiaebnHkBQTC88nTUVzWbeqtCP8-qZMp6g7wWT0zZQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Dashboard Header / Display Title -->
+<div class="mb-10">
+<h2 class="text-[2.75rem] font-bold tracking-[-0.02em] text-on-surface leading-tight">Customer Management</h2>
+<p class="text-on-surface-variant font-body mt-2">Manage relationships, track lifetime value, and monitor activity.</p>
+</div>
+<!-- Statistics Section (Bento Inspired) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Total Customers -->
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-[0_12px_40px_rgba(25,28,30,0.04)] transition-transform active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">Total Customers</span>
+<span class="text-tertiary font-bold text-xs bg-tertiary-container/10 px-2 py-1 rounded-full">+8%</span>
+</div>
+<div class="text-3xl font-extrabold tracking-tight text-on-surface">3,210</div>
+<div class="mt-4 flex gap-1">
+<div class="w-full h-1.5 bg-tertiary rounded-full"></div>
+<div class="w-full h-1.5 bg-tertiary rounded-full"></div>
+<div class="w-full h-1.5 bg-tertiary rounded-full"></div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full"></div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<!-- New Customers -->
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-[0_12px_40px_rgba(25,28,30,0.04)] transition-transform active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">New This Month</span>
+<span class="text-tertiary font-bold text-xs bg-tertiary-container/10 px-2 py-1 rounded-full">+12%</span>
+</div>
+<div class="text-3xl font-extrabold tracking-tight text-on-surface">145</div>
+<div class="mt-4 flex gap-1">
+<div class="w-full h-1.5 bg-primary-container rounded-full"></div>
+<div class="w-full h-1.5 bg-primary-container rounded-full"></div>
+<div class="w-full h-1.5 bg-primary-container rounded-full"></div>
+<div class="w-full h-1.5 bg-primary-container rounded-full"></div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full"></div>
+</div>
+</div>
+<!-- Top Spender -->
+<div class="bg-gradient-primary p-6 rounded-full text-white shadow-xl transition-transform active:scale-95 duration-200">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.1em] opacity-80">Top Spender</span>
+<span class="material-symbols-outlined text-sm">stars</span>
+</div>
+<div class="text-3xl font-extrabold tracking-tight">Alex Sterling</div>
+<div class="mt-1 font-medium opacity-90 tracking-tight">$12,400.00 Total Spent</div>
+</div>
+</div>
+<!-- Filter & Search Section -->
+<div class="bg-surface-container-low p-2 rounded-xl mb-6 flex flex-col md:flex-row gap-4 items-center">
+<div class="relative w-full md:flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-full py-3 pl-12 pr-4 text-sm focus:ring-2 focus:ring-primary/20 transition-all font-body" placeholder="Search customers by name or email..." type="text"/>
+</div>
+<div class="flex w-full md:w-auto gap-4">
+<select class="bg-surface-container-lowest border-none rounded-full py-3 px-6 text-sm font-medium focus:ring-2 focus:ring-primary/20 w-full md:w-48 appearance-none">
+<option>Status: All</option>
+<option>Active</option>
+<option>Inactive</option>
+</select>
+<button class="bg-primary text-white px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">person_add</span>
+                    Add Customer
+                </button>
+</div>
+</div>
+<!-- Data List -->
+<div class="bg-surface-container-lowest rounded-full overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-none">
+<th class="px-8 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Customer</th>
+<th class="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Email Address</th>
+<th class="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Orders</th>
+<th class="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Total Spent</th>
+<th class="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant">Last Activity</th>
+<th class="px-8 py-5 text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="close-up portrait of a young man with glasses and a friendly expression, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_tzdYVMtdxkhkZTclIt9_l6bOOibE53stcaVab661SHy9QicsbqSvh7yvZt3Cs9rlW6Fa3TKZxYHrLpboZ_1GxMSIIop2pUzMiQyTYOTezlt7LxEqCfp94D1gQk6rdvJ7sQUJFxYz6NKFL1HMSQm4-NA1u5dKUG4bi6cfkZlz7ROHUTb99cwCAXSXW5T3rpcN7BPZjIBKY7-LJqY15JHJaWCVRSODxC43FWHvImSHWfrjm0Zyax22HYh8DxTd7GvxD-nFBC14db4"/>
+<div>
+<div class="font-bold text-on-surface tracking-tight">Alex Sterling</div>
+<div class="text-xs text-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+                                            Active
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">alex.s@horizon.com</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">42</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">$12,400.00</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">Today, 2:45 PM</td>
+<td class="px-8 py-4 text-right">
+<button class="text-[#3B82F6] text-xs font-bold uppercase tracking-widest hover:underline px-4 py-2 rounded-lg transition-all active:scale-95">View History</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="professional woman smiling in modern office environment with blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmOhCl_ZcE41z7NCec8ZqLpG0f_1KDzg6gHjNk3FXySAgRX3PcOW6DSyfbF8iBPkGCJ9iN1PgEhpfxvfycqatoONaxrelQkk6eZDHmi71cN8lwHkaEAaKhenM0UMOkYZrA3M1h-qOQSH4XYVYXROAW_THGVnGjQyGTsggc8xrV2vnSkOobJf21oTgHpHwVBPVQR5e2U1WAGHnh_lEGSobFIbU473Thh6KjZOYDBgKY4hVNaS2uOwqSWm_YzbXhUAbOZWOrm905ck"/>
+<div>
+<div class="font-bold text-on-surface tracking-tight">Sarah Jenkins</div>
+<div class="text-xs text-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+                                            Active
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">s.jenkins@retailco.net</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">18</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">$4,250.50</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">Nov 22, 2023</td>
+<td class="px-8 py-4 text-right">
+<button class="text-[#3B82F6] text-xs font-bold uppercase tracking-widest hover:underline px-4 py-2 rounded-lg transition-all active:scale-95">View History</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="studio portrait of a man in a black turtleneck with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD70zufwPBk5WX32iNnQgoJOpPfBi5L1He1TOjfLqeMpCie5HoUIQgcPsOR2mIveU-Odot8FT5or3p839B-VCJTSYrFDMQVgMsGJR1UKb-wTexga4lTaC8m2bH7HQMEWRV97PBp2OGXOShMnK3bzhRgZ3GEFfetT1JYJ9HgJ64ZAcj4Bk4Eg_3zTvH-_HKrrmEe_OjTld_VvjfhjaE8x6hbp5KRSr7-ZULr_3v_TGu5c68AYQC1B1INTXXi-mapFM8BxDqVfMkEaO8"/>
+<div>
+<div class="font-bold text-on-surface tracking-tight">Marcus Thorne</div>
+<div class="text-xs text-outline font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-outline rounded-full"></span>
+                                            Inactive
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">m.thorne@design.io</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">5</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">$890.00</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">Oct 05, 2023</td>
+<td class="px-8 py-4 text-right">
+<button class="text-[#3B82F6] text-xs font-bold uppercase tracking-widest hover:underline px-4 py-2 rounded-lg transition-all active:scale-95">View History</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="modern businesswoman in a light bright workspace with elegant minimalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkLKzP7Vago635UD2W7hlQoBpQFv04l0STg0fQOJH4tlF6NQgwi0QLMAQ0su02vDWS0-S_8rNQEJRC_oRgUJNqboQ0oeDzohyDCc1pBd7G9_bMMIPBAhwUY0eSKeVEXp3LvvQq3j419U_qYqx0VJy7qCUqY48Dm5Job3jEGkA4D4lKG5rGxuPvzK_r1r2o1F12zEmt1AFI3B45rem0elXj6U01lgYNL-PkPW5zUqKOWfU1vSk98vKduUCfbplk4JX9OtG7wOYGRso"/>
+<div>
+<div class="font-bold text-on-surface tracking-tight">Elena Rodriguez</div>
+<div class="text-xs text-tertiary-container font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span>
+                                            Active
+                                        </div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">elena.rod@fintech.com</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">31</td>
+<td class="px-6 py-4 text-sm font-bold text-on-surface">$7,820.15</td>
+<td class="px-6 py-4 text-sm font-medium text-secondary">Yesterday, 9:12 AM</td>
+<td class="px-8 py-4 text-right">
+<button class="text-[#3B82F6] text-xs font-bold uppercase tracking-widest hover:underline px-4 py-2 rounded-lg transition-all active:scale-95">View History</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-5 flex justify-between items-center bg-surface-container-low/50">
+<span class="text-xs font-medium text-on-surface-variant">Showing 4 of 3,210 customers</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface shadow-sm active:scale-90 transition-all"><span class="material-symbols-outlined text-base">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white shadow-sm font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-bold text-xs hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface shadow-sm font-bold text-xs hover:bg-surface-container-high transition-colors">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface shadow-sm active:scale-90 transition-all"><span class="material-symbols-outlined text-base">chevron_right</span></button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-white dark:bg-[#1E2D40] z-50 shadow-[0_-12px_40px_rgba(25,28,30,0.06)] border-t border-surface-container">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Stock</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#0058be] dark:text-blue-400 bg-[#f2f4f6] dark:bg-slate-800/50 rounded-xl px-4 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-widest mt-1">Customers</span>
+</div>
+</nav>
+</body></html>

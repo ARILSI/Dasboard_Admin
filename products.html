@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="sc/css/style.css">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#00855b",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed": "#001a42",
+                        "primary-fixed": "#d8e2ff",
+                        "primary": "#0058be",
+                        "on-primary-container": "#fefcff",
+                        "background": "#f7f9fb",
+                        "surface-tint": "#005ac2",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline-variant": "#c2c6d6",
+                        "secondary-container": "#d1e1fa",
+                        "on-secondary-fixed": "#0c1c2f",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2170e4",
+                        "surface-bright": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container": "#eceef0",
+                        "on-secondary-container": "#556479",
+                        "on-tertiary-container": "#f5fff6",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "on-surface-variant": "#424754",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#006947",
+                        "secondary-fixed": "#d4e4fd",
+                        "inverse-primary": "#adc6ff",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed-dim": "#b8c8e0",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-fixed-variant": "#39485c",
+                        "on-tertiary-fixed": "#002113",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary": "#505f75",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#004395",
+                        "primary-fixed-dim": "#adc6ff",
+                        "outline": "#727785"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- Navigation Drawer (Desktop Sidebar) -->
+<aside class="hidden md:flex flex-col h-screen w-72 bg-[#1E2D40] rounded-r-2xl shadow-2xl z-40 fixed left-0 top-0 py-8 overflow-y-auto">
+<div class="px-6 mb-8 flex flex-col items-start">
+<div class="w-12 h-12 bg-blue-600 rounded-xl mb-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">warehouse</span>
+</div>
+<h1 class="text-white font-bold text-lg">Olshop</h1>
+<p class="text-slate-400 text-xs font-semibold uppercase tracking-widest mt-1">Director of Ops</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-400 px-6 py-3 flex items-center gap-4 hover:bg-white/10 hover:text-white transition-all" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm font-semibold">Dashboard</span>
+</a>
+<a class="text-white bg-blue-600/20 border-l-4 border-blue-500 px-6 py-3 flex items-center gap-4 transition-all" href="products.html">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+<span class="font-['Inter'] text-sm font-semibold">Products</span>
+</a>
+<a class="text-slate-400 px-6 py-3 flex items-center gap-4 hover:bg-white/10 hover:text-white transition-all" href="orders.html">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Inter'] text-sm font-semibold">Orders</span>
+</a>
+<a class="text-slate-400 px-6 py-3 flex items-center gap-4 hover:bg-white/10 hover:text-white transition-all" href="customers.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Inter'] text-sm font-semibold">Customers</span>
+</a>
+<a class="text-slate-400 px-6 py-3 flex items-center gap-4 hover:bg-white/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-['Inter'] text-sm font-semibold">Reports</span>
+</a>
+<a class="text-slate-400 px-6 py-3 flex items-center gap-4 hover:bg-white/10 hover:text-white transition-all mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-sm font-semibold">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Content Area -->
+<main class="flex-1 md:ml-72 flex flex-col pb-24 md:pb-8">
+<!-- TopAppBar (JSON Mapping) -->
+<header class="w-full top-0 sticky z-30 bg-[#f7f9fb] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="md:hidden w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional portrait of a business operations manager in a high-key studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2kbqftQLqWfrvzATPkxWljFtKoOgnVNOtzfR37bVRNVdi9p6p4W4QHUqSF7jei5MR1TWLaskllsGxoAM05WACLYCRF069b00mv0V7Wp9gF4fwkfbwTulVmPAfg6hwH7W2TnAhUZtnsVfvghp980qjrKVd_TYQ4ROjLex66Cg5BFhbajE-2gJID5I0NE1ox_UD8EoreumNtpx6n6FZdSU5jPjhcVVbNaz2C59jx5BxxSmpIZ06-Oa_WTKbY7Bd9lxVQg_I11dt2jg"/>
+</div>
+<div class="hidden md:block">
+<span class="text-xl font-black tracking-tighter text-[#1E2D40]">The Olshop</span>
+</div>
+<div class="md:hidden">
+<h2 class="font-['Inter'] tracking-tight font-bold text-slate-900 text-lg">The Olshop</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-[#0058be] hover:bg-slate-100 transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Page Hero / Action Section -->
+<section class="px-6 py-6 space-y-6">
+<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight text-on-surface">Inventory Management</h2>
+<p class="text-on-surface-variant text-sm mt-1">Managing 1,284 high-precision SKUs</p>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                    Add New Product
+                </button>
+</div>
+<!-- Search and Filters Bar -->
+<div class="flex flex-col md:flex-row gap-4 items-center bg-surface-container-lowest p-2 rounded-xl">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-lg pl-12 pr-4 py-3 focus:ring-2 focus:ring-primary text-sm font-medium transition-all" placeholder="Search by SKU or Name..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-4 py-3 bg-surface-container-high text-on-surface text-sm font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                        Filters
+                    </button>
+<button class="flex-1 md:flex-none px-4 py-3 bg-surface-container-high text-on-surface text-sm font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="sort">sort</span>
+                        Latest
+                    </button>
+</div>
+</div>
+</section>
+<!-- Product List -->
+<section class="px-6 space-y-4">
+<!-- Table Header (Desktop Only) -->
+<div class="hidden md:grid grid-cols-12 gap-4 px-4 py-2 text-on-secondary-container text-xs font-black uppercase tracking-widest">
+<div class="col-span-5">Product &amp; SKU</div>
+<div class="col-span-2 text-center">Stock Level</div>
+<div class="col-span-2 text-center">Price</div>
+<div class="col-span-2 text-center">Status</div>
+<div class="col-span-1 text-right">Actions</div>
+</div>
+<!-- List Items -->
+<div class="space-y-3">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col md:grid md:grid-cols-12 gap-4 items-center transition-all hover:bg-surface-container-low group">
+<div class="col-span-5 flex items-center gap-4 w-full">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Red Sports Shoe" class="w-full h-full object-cover" data-alt="Vibrant red athletic sneaker isolated on a minimal white background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvP73KOThT-H_7ekEFUKPh3GPXcA-sL41o1l3Cn3nOU5oPRNiWLYrusMgn-hRN5QIQR8FndpNNlnTBsz4eZz_4YHT3XIvtBqJ1wf_fUjozhDtwbxChN7rPsY5UiB89VyZS7rASvUWsh5-8ztPf78_LVqnwUcst2oU4R6aTTJlHQpTkXuTXkcMfsBOfdVSWIC1RFVLEEI7NkO0EywvllpijBGSiiQ3hwinkjctUV2YB5oPCmSmNqNsmZq5GxzF_2bmCDzc_ABZ8kJI"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-bold text-on-surface truncate">Vortex Glide Running Shoes</h3>
+<p class="text-xs font-bold text-outline uppercase tracking-wider">SKU-2984-XL-RD</p>
+</div>
+</div>
+<div class="col-span-2 w-full">
+<div class="flex items-center justify-between md:flex-col md:items-center gap-1">
+<span class="md:hidden text-xs font-black text-outline uppercase tracking-tighter">Stock</span>
+<div class="flex gap-1">
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+</div>
+<span class="text-xs font-bold text-tertiary mt-1">60%</span>
+</div>
+</div>
+<div class="col-span-2 w-full text-right md:text-center">
+<span class="md:hidden float-left text-xs font-black text-outline uppercase tracking-tighter">Price</span>
+<span class="font-bold text-on-surface">$129.99</span>
+</div>
+<div class="col-span-2 w-full flex justify-center">
+<span class="bg-tertiary-container/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">In Stock</span>
+</div>
+<div class="col-span-1 w-full flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 (Alert State) -->
+<div class="bg-error-container/20 p-4 rounded-xl flex flex-col md:grid md:grid-cols-12 gap-4 items-center transition-all hover:bg-error-container/30 border-l-4 border-error">
+<div class="col-span-5 flex items-center gap-4 w-full">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Minimal Watch" class="w-full h-full object-cover" data-alt="Modern silver minimalist wrist watch on a clean studio surface with architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmFtSCKEef8Qbcbtqm_-3aNGenwsHB-P76tAtX3fe7Czq1mjDsaXaFAYHlzRJopM4GyU6oeEcRll-BkNvkTbfIDsEISXjYwFHyKKOExvwBqxxQuInpx27FPjEOb0-DCG1GhcWPirZQREiSqyorcxK_LkbuHcvVaqjGUEMeAfGD1Sq4cyBiclMGleDRvmEadbrWcIWPawh703QNiXqTxdTfto498faaKGIbzftXPF5Eoq4T0YB8eAUEL6-ADTGfSNM3mXdx8U3KVaY"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-bold text-on-surface truncate">Titanium Series Watch</h3>
+<p class="text-xs font-bold text-outline uppercase tracking-wider">SKU-7721-SM-SL</p>
+</div>
+</div>
+<div class="col-span-2 w-full">
+<div class="flex items-center justify-between md:flex-col md:items-center gap-1">
+<span class="md:hidden text-xs font-black text-outline uppercase tracking-tighter">Stock</span>
+<div class="flex gap-1">
+<div class="w-3 h-6 rounded-sm bg-error"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+<div class="w-3 h-6 rounded-sm bg-secondary-container"></div>
+</div>
+<span class="text-xs font-bold text-error mt-1">Low: 4 units</span>
+</div>
+</div>
+<div class="col-span-2 w-full text-right md:text-center">
+<span class="md:hidden float-left text-xs font-black text-outline uppercase tracking-tighter">Price</span>
+<span class="font-bold text-on-surface">$249.50</span>
+</div>
+<div class="col-span-2 w-full flex justify-center">
+<span class="bg-error text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Restock Needed</span>
+</div>
+<div class="col-span-1 w-full flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col md:grid md:grid-cols-12 gap-4 items-center transition-all hover:bg-surface-container-low">
+<div class="col-span-5 flex items-center gap-4 w-full">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden shrink-0">
+<img alt="Headphones" class="w-full h-full object-cover" data-alt="Professional studio over-ear headphones on a dark textured background with dramatic blue accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRdpAlp2WPcUBc1pQ4kVyQ6pF60W_7ON2EZH84WePvp-PANWKMLhqb8Nbgkx67QTnSTJZGvaCLN0SvmcojOQoqJfJ8wsE7vvVGfxhuvOr6-5SOO3bIXr0_6INB0NAjVhmclw7oUqJpE8_dZQLo1ECtScbWpQ9AvTNlgh6ZYkzGg-8sgv9MzOdsXFFy2cxh_O_fEvSbxKHhvhLup7TGJchBH-_UVPdY2sUnMx6ucsSPxrqGhyAXM-h-UJDsxP5h2uK5g-ZP5n42dU"/>
+</div>
+<div class="overflow-hidden">
+<h3 class="font-bold text-on-surface truncate">Sonic Pro Noise Cancelling</h3>
+<p class="text-xs font-bold text-outline uppercase tracking-wider">SKU-9902-BK-NC</p>
+</div>
+</div>
+<div class="col-span-2 w-full">
+<div class="flex items-center justify-between md:flex-col md:items-center gap-1">
+<span class="md:hidden text-xs font-black text-outline uppercase tracking-tighter">Stock</span>
+<div class="flex gap-1">
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+<div class="w-3 h-6 rounded-sm bg-tertiary"></div>
+</div>
+<span class="text-xs font-bold text-tertiary mt-1">100%</span>
+</div>
+</div>
+<div class="col-span-2 w-full text-right md:text-center">
+<span class="md:hidden float-left text-xs font-black text-outline uppercase tracking-tighter">Price</span>
+<span class="font-bold text-on-surface">$189.00</span>
+</div>
+<div class="col-span-2 w-full flex justify-center">
+<span class="bg-tertiary-container/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">In Stock</span>
+</div>
+<div class="col-span-1 w-full flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination (Implicit for "Data List") -->
+<div class="px-6 py-8 flex items-center justify-between">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Showing 1-10 of 1,284</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-white border-t border-[#c2c6d6]/20 shadow-[0_-4px_20px_rgba(25,28,30,0.04)] rounded-t-xl flex justify-around items-center px-4 pb-4 pt-2">
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-1.5 hover:text-[#0058be] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-50 text-[#0058be] rounded-xl px-4 py-1.5 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Stock</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-1.5 hover:text-[#0058be] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-1.5 hover:text-[#0058be] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">More</span>
+</a>
+</nav>
+</body></html>
